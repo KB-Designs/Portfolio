@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brian | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body class="bg-white text-gray-900 font-sans">
+    <!-- Navbar -->
+    <header class="fixed w-full bg-white shadow z-50">
+      <nav class="container mx-auto flex justify-between items-center py-4 px-8">
+        <!-- Logo -->
+        <div class="text-2xl font-bold text-[#08CB00]">Brian.</div>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-10 text-lg">
+          <li><a href="#home" class="hover:text-[#08CB00]">Home</a></li>
+          <li><a href="#projects" class="hover:text-[#08CB00]">Projects</a></li>
+          <li><a href="https://github.com/" target="_blank" class="hover:text-[#08CB00]">GitHub</a></li>
+          <li><a href="#contact" class="hover:text-[#08CB00]">Contact</a></li>
+        </ul>
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-3xl">
+          <i class="ph-list"></i>
+        </button>
+      </nav>
+      <!-- Mobile Dropdown -->
+      <div id="mobile-menu" class="hidden bg-white shadow-md md:hidden">
+        <ul class="flex flex-col space-y-4 py-4 px-8 text-lg">
+          <li><a href="#home" class="hover:text-[#08CB00]">Home</a></li>
+          <li><a href="#projects" class="hover:text-[#08CB00]">Projects</a></li>
+          <li><a href="https://github.com/" target="_blank" class="hover:text-[#08CB00]">GitHub</a></li>
+          <li><a href="#contact" class="hover:text-[#08CB00]">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-between container mx-auto px-8 pt-32">
+      <div class="md:w-1/2" data-aos="fade-right">
+        <h1 class="text-5xl font-bold mb-6">
+          Hi, I’m <span class="text-[#08CB00]">Brian</span>
+        </h1>
+        <p class="text-lg text-gray-700 mb-6">
+          A passionate web developer specializing in creating modern, responsive websites.
+        </p>
+        <a href="#projects" class="bg-[#08CB00] text-white px-6 py-3 rounded-lg shadow hover:opacity-90 transition">View My Work</a>
+      </div>
+      <div class="md:w-1/2 flex justify-center mt-10 md:mt-0" data-aos="fade-left">
+  <img src="images/KIMANI.jpg" alt="i swear its me" 
+       class="w-72 h-72 object-cover rounded-2xl shadow-lg" />
+</div>
+
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-8">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Projects</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card -->
+          <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition" data-aos="fade-up">
+            <h3 class="text-2xl font-semibold mb-3">Project One</h3>
+            <p class="text-gray-600 mb-4">Description of project one.</p>
+            <a href="#" target="_blank" class="flex items-center text-[#08CB00] hover:underline">
+              <i class="ph-bold ph-link-simple mr-2"></i> Visit Site
+            </a>
+          </div>
+          <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-2xl font-semibold mb-3">Project Two</h3>
+            <p class="text-gray-600 mb-4">Description of project two.</p>
+            <a href="#" target="_blank" class="flex items-center text-[#08CB00] hover:underline">
+              <i class="ph-bold ph-link-simple mr-2"></i> Visit Site
+            </a>
+          </div>
+          <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-2xl font-semibold mb-3">Project Three</h3>
+            <p class="text-gray-600 mb-4">Description of project three.</p>
+            <a href="#" target="_blank" class="flex items-center text-[#08CB00] hover:underline">
+              <i class="ph-bold ph-link-simple mr-2"></i> Visit Site
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 container mx-auto px-8">
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Contact</h2>
+      <div class="flex justify-center gap-10 text-3xl" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://www.linkedin.com/in/brian-kimani-344934373/" target="_blank" class="hover:text-[#08CB00]"><i class="ph-bold ph-linkedin-logo"></i></a>
+        <a href="mailto:kimanibrian030@gmail.com" class="hover:text-[#08CB00]"><i class="ph-bold ph-envelope-simple"></i></a>
+        <a href="https://x.com/KingKim13028906" target="_blank" class="hover:text-[#08CB00]"><i class="ph-bold ph-twitter-logo"></i></a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-600 bg-gray-50">
+      © 2025 Brian. All rights reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      AOS.init();
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
