@@ -130,58 +130,14 @@
     </section>
 
     <!-- Contact Section -->
-    <!-- Contact Section -->
-<section id="contact" class="py-20 container mx-auto px-8">
-  <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Contact</h2>
-  
-  <!-- Contact Form -->
-  <div class="max-w-4xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
-    <form id="contact-form" class="bg-white p-8 rounded-xl shadow">
-      <div class="flex flex-col md:flex-row gap-8">
-        <!-- Left Column: Name and Email -->
-        <div class="md:w-1/2">
-          <div class="mb-6">
-            <label for="name" class="block text-gray-700 mb-2">Name</label>
-            <input type="text" id="name" name="name" required 
-                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#08CB00] focus:border-transparent">
-          </div>
-          
-          <div class="mb-6">
-            <label for="email" class="block text-gray-700 mb-2">Email</label>
-            <input type="email" id="email" name="email" required 
-                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#08CB00] focus:border-transparent">
-          </div>
-        </div>
-        
-        <!-- Right Column: Message and Send Button -->
-        <div class="md:w-1/2 flex flex-col">
-          <div class="mb-6 flex-grow">
-            <label for="message" class="block text-gray-700 mb-2">Message</label>
-            <textarea id="message" name="message" rows="5" required 
-                      class="w-full h-full min-h-[150px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#08CB00] focus:border-transparent"></textarea>
-          </div>
-          
-          <button type="submit" 
-                  class="w-full bg-[#08CB00] text-white py-3 rounded-lg shadow hover:opacity-90 transition font-medium">
-            Send Message
-          </button>
-        </div>
+    <section id="contact" class="py-20 container mx-auto px-8">
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Contact</h2>
+      <div class="flex justify-center gap-10 text-3xl" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://www.linkedin.com/in/brian-kimani-344934373/" target="_blank" class="hover:text-[#08CB00]"><i class="ph-bold ph-linkedin-logo"></i></a>
+        <a href="mailto:kimanibrian030@gmail.com" class="hover:text-[#08CB00]"><i class="ph-bold ph-envelope-simple"></i></a>
+        <a href="https://x.com/KingKim13028906" target="_blank" class="hover:text-[#08CB00]"><i class="ph-bold ph-twitter-logo"></i></a>
       </div>
-      
-      <!-- Success Message (Hidden by default) -->
-      <div id="success-message" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
-        <i class="ph-bold ph-check-circle mr-2"></i> Thank you! Your message has been sent successfully.
-      </div>
-    </form>
-  </div>
-  
-  <!-- Social Icons -->
-  <div class="flex justify-center gap-10 text-3xl" data-aos="fade-up" data-aos-delay="200">
-    <a href="https://www.linkedin.com/in/brian-kimani-344934373/" target="_blank" class="hover:text-[#08CB00]"><i class="ph-bold ph-linkedin-logo"></i></a>
-    <a href="mailto:kimanibrian030@gmail.com" class="hover:text-[#08CB00]"><i class="ph-bold ph-envelope-simple"></i></a>
-    <a href="https://x.com/KingKim13028906" target="_blank" class="hover:text-[#08CB00]"><i class="ph-bold ph-twitter-logo"></i></a>
-  </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="py-6 text-center text-gray-600 bg-gray-50">
@@ -230,28 +186,6 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
-    
-    // Contact form submission
-    const contactForm = document.getElementById('contact-form');
-    const successMessage = document.getElementById('success-message');
-    
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // In a real implementation, you would send the form data to a server
-      // For this example, we'll just show a success message
-      
-      // Show success message
-      successMessage.classList.remove('hidden');
-      
-      // Reset form
-      contactForm.reset();
-      
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        successMessage.classList.add('hidden');
-      }, 5000);
-    });
   });
 
     </script>
