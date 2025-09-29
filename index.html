@@ -13,18 +13,29 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-   <style>
-  .slide-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUp 1s ease-out forwards;
+<style>
+  /* Fade Up Animation */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes slideUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Typing Animation - Looping */
+  .typing {
+    border-right: 2px solid #08CB00;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: blink 0.7s step-end infinite;
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
   }
 </style>
 
@@ -65,23 +76,26 @@
     <!-- Hero Section -->
 <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-between container mx-auto px-8 pt-32">
   <div class="md:w-1/2">
-    <h1 class="text-5xl font-bold mb-6 slide-up">
-      Hi, I’m <span class="text-[#08CB00]">Brian</span>
+    <h1 class="text-5xl font-bold mb-6 animate-fade-up" style="animation-delay: 0.1s">
+      Hi, I’m <span class="text-[#08CB00] typing" id="typing-name"></span>
     </h1>
 
-
-
-
-    <p class="text-lg text-gray-700 mb-6 animate-fade-up" style="animation-delay: 0.2s">
+    <p class="text-lg text-gray-700 mb-6 animate-fade-up" style="animation-delay: 0.3s">
       I’m a software engineer who loves creating scalable solutions. With Python and Django, I focus on building backend systems that make apps faster, smarter, and more user-friendly.
     </p>
-    <a href="#projects" class="bg-[#08CB00] text-white px-6 py-3 rounded-lg shadow hover:opacity-90 transition animate-fade-up" style="animation-delay: 0.4s">View My Work</a>
+
+    <a href="#projects" class="bg-[#08CB00] text-white px-6 py-3 rounded-lg shadow hover:opacity-90 transition animate-fade-up" style="animation-delay: 0.5s">
+      View My Work
+    </a>
   </div>
+
   <div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
     <img src="images/KIMANI.jpg" alt="i swear its me" 
-         class="w-72 h-72 object-cover rounded-2xl shadow-lg" />
+         class="w-72 h-72 object-cover rounded-2xl shadow-lg animate-fade-up" style="animation-delay: 0.7s" />
   </div>
 </section>
+
+
 
 
     <!-- Projects Section -->
@@ -138,6 +152,42 @@
       menuBtn.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
       });
+
+      const words = ["Brian", "a Developer", ];
+  let i = 0;
+  let j = 0;
+  let currentWord = "";
+  let isDeleting = false;
+
+  function typeEffect() {
+    const typingEl = document.getElementById("typing-name");
+
+    if (!isDeleting) {
+      currentWord = words[i].slice(0, ++j);
+    } else {
+      currentWord = words[i].slice(0, --j);
+    }
+
+    typingEl.textContent = currentWord;
+
+    if (!isDeleting && j === words[i].length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1200); // Pause before delete
+      return;
+    }
+
+    if (isDeleting && j === 0) {
+      isDeleting = false;
+      i = (i + 1) % words.length; // Loop words
+    }
+
+    setTimeout(typeEffect, isDeleting ? 80 : 120);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    typeEffect();
+  });
+
     </script>
   </body>
 </html>
